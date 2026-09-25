@@ -1,5 +1,6 @@
 export class Jugador {
-  constructor(nombre) { //declaramos el parémetro en el constructor
+  constructor(nombre,nivel) { //declaramos el parémetro en el constructor
     this.nombre = nombre;  //asignamos el contenido de nombre a la propiedad nombre
+    this.nivel = nivel;
   }
 }

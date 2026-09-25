@@ -8,13 +8,13 @@ export class Jugador {
     this.nombre = String(nombre);  
     this.nivel = Number(nivel); 
     this.exp = Number(exp);
-    this.inventario = []; // creamos array para guardar el inventario
+    this.inventario = {}; // creamos array para guardar el inventario
   }
   informacion() {   
     return `${this.nombre}, has alcanzado el Nivel ${this.nivel}!`;  
   }
   agregarObjetos(objeto,numObj){ //creamos metodo que recibe el nombre del objetp y el numero
-   this.inventario.push(objeto,numObj) // agregamos los datos al inventario
+   this.inventario[objeto]= numObj// agregamos los datos al inventario
    return `Se han agregado ${numObj} ${objeto}al inventario`;
   }
 }
@@ -22,10 +22,10 @@ export class Jugador {
 export class Equipo { //creamos clase para equipo
   constructor (nombreEquipo){ //definimos nombre de equipo como parametro del consrtuctos
     this.nombreEquipo = nombreEquipo; // asignamos el contenido de nombreEquipo a la propiedad nombreEquipo 
-    this.miembros = []; //creamos la lista para guardar los miembros del equipo
+    this.miembros = [] ; //creamos la lista para guardar los miembros del equipo
   }
-  agregarMiembro (jugador){ //creamos metodo para agregar un miembro
-    this.miembros.push(jugador);  //agregamos Jugador a lista miembros
+  agregarMiembro (jugador){ //creampushos metodo para agregar un miembro
+     this.miembros.push(jugador);  //agregamos Jugador a lista miembros
     return `${jugador.nombre} ha sido agregado al equipo ${this.nombreEquipo}`;
   }
   mostrarMiembros(){ //creamos metodo para mostar miembros del equipo
